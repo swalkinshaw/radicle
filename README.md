@@ -25,6 +25,8 @@ The class needs to be instantiated and rendered. This isn't done automatically s
 Example of a View
 
 ```php
+<?php
+
   namespace ts;
 
   class HomeView extends View {
@@ -50,6 +52,8 @@ However, for the individual blogs, we leave that up to [WP_Query](http://codex.w
 It will return posts, a single post, categories, comments, pages, etc. Here's an example of how to access WP_Query for a blog post in a view:
 
 ```php
+<?php
+
 global $wp_query
 
 $post = $wp_query->posts[0]
