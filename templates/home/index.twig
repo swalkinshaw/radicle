@@ -1,0 +1,15 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+
+  {% for blog in blogs %}
+    {% set post = blog.latest_post %}
+    {% include 'home/_blog.twig' %}
+  {% endfor %}
+
+  {% for blog in blogs %}
+    {% set post = blog.latest_post(1) %}
+    {% include 'home/_blog.twig' %}
+  {% endfor %}
+
+{% endblock %}

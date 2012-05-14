@@ -1,0 +1,36 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+
+  <article id="post-{{ post.id }}" class="post single row-fluid">
+    <header>
+      <h1 class="post-title"><a href="{{ post.permalink }}">{{ post.title }}</a></h1>
+    </header>
+
+    <section class="post-content">
+      {{ post.content|raw }}
+    </section>
+
+    <section class="comments">
+      <div id="comment-list">
+        {% for comment in post.comments %}
+          {% include 'post/_comment.twig' %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <footer>
+      <nav class="nav-links">
+        <ul class="clearfix">
+          <li class="post-nav prev">
+            {{ post.previous_post_link|raw }}
+          </li>
+          <li class="post-nav next">
+            {{ post.next_post_link|raw }}
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </article>
+
+{% endblock %}

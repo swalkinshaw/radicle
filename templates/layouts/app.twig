@@ -1,0 +1,59 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>{{ post is defined ? "#{post.title|raw} | #{blog.name} | " : '' }}Blogs</title>
+
+  <script src="{{ wp.get_template_directory_uri }}/assets/js/libs/modernizr-2.5.3.min.js"></script>
+
+  <link href="{{ wp.get_template_directory_uri }}/assets/css/h5bp.css" rel="stylesheet">
+  <link href="{{ wp.get_template_directory_uri }}/assets/css/app.css" rel="stylesheet">
+
+  {% if post %}
+    <link rel="canonical" href="{{ post.permalink }}">
+  {% endif %}
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="{{ wp.get_template_directory_uri }}/assets/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+</head>
+
+<body class="{{ blog.path|default('home') }}">
+
+  {% include 'shared/_header.twig' %}
+
+  <div id="wrap" class="" role="document">
+
+    {% block content %}
+    {% endblock %}
+
+  </div><!-- /#wrap -->
+
+  {% include 'shared/_footer.twig' %}
+
+  <script>
+    // Reference: https://github.com/h5bp/h5bp-ui
+    (function(doc, script) {
+      var js,
+      fjs = doc.getElementsByTagName(script)[0],
+      frag = doc.createDocumentFragment(),
+      add = function(url, id) {
+        if (doc.getElementById(id)) { return; }
+        js = doc.createElement(script);
+        js.src = url;
+        id && (js.id = id);
+        frag.appendChild(js);
+      };
+
+      add(('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js', 'ga');
+      add('http://platform.twitter.com/widgets.js', 'twitter');
+
+      fjs.parentNode.insertBefore(frag, fjs);
+    }(document, 'script'));
+  </script>
+
+</body>
+</html>

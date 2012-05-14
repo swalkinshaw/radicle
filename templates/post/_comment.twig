@@ -1,0 +1,12 @@
+<div class="comment">
+  <div class="comment-meta">
+    <time>{{ comment.date }}</time>
+
+    {% if comment.author_url %}
+      <a href="{{ comment.author_url }}">{{ comment.author_name }}</a>
+    {% else %}
+      {{ comment.author_name }}
+    {% endif %}
+  </div>
+  {{ comment.content }}
+</div>

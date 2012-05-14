@@ -1,0 +1,11 @@
+<article id="post-{{ post.id }}" class="post row-fluid {{ blog.path }}">
+  <a class="thumb" href="{{ post.permalink }}">
+    <img src="{{ post.thumbnail_url }}">
+  </a>
+  <div class="info">
+    <time class="post-date" datetime="{{ post.date }}">{{ post.formatted_date }}</time>
+    <h3 class="blog-name"><a href="{{ blog.url }}">{{ blog.name }}</a></h3>
+    <h2 class="post-title"><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
+    <p class="post-excerpt">{{ post.excerpt }}</p>
+  </div>
+</article>

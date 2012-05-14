@@ -1,0 +1,22 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+
+  {% for post in blog.posts %}
+    {% include 'blog/_post.twig' %}
+  {% endfor %}
+
+  <footer>
+    <nav class="nav-links">
+      <ul class="clearfix">
+        <li class="post-nav prev">
+          <a href="{{ wp.previous_posts(false) }}" rel="prev">Prev Page</a>
+        </li>
+        <li class="post-nav next">
+          <a href="{{ wp.next_posts(false) }}" rel="next">Next Page</a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+
+{% endblock %}
