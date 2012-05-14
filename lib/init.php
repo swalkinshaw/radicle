@@ -14,18 +14,14 @@
 
     $loader->run();
 
-    // required to bypass default template loader
+    // required to stop the default template loader from running after ours
     exit();
   }
 
   add_action('template_redirect', 'template_loader');
-  function setup() {
-    // tell the TinyMCE editor to use editor-style.css
-    // if you have issues with getting the editor to show your changes then
-    // use this instead: add_editor_style('editor-style.css?' . time());
-    add_editor_style('css/editor-style.css');
 
-    // http://codex.wordpress.org/Post_Thumbnails
+  function setup() {
+    add_editor_style('css/editor-style.css');
     add_theme_support('post-thumbnails');
   }
 
