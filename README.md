@@ -1,3 +1,8 @@
+# Radicle
+In botany, the radicle is the first part of a seedling (a growing plant embryo) to emerge from the seed during the process of germination. The radicle is the embryonic root of the plant, and grows downward in the soil.
+
+In WordPress, it's an experimental MVC style theme that is just crazy enough to work.
+
 # Theme Architecture
 
 There are 3 files required by WordPress which must remain in the theme root: `style.css`, `functions.php`, and `index.php`.
