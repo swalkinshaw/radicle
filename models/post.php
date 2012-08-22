@@ -18,6 +18,7 @@
       $this->raw_content   = $post->post_content;
       $this->author        = new Author($post->post_author);
       $this->permalink     = get_blog_permalink($this->blog->id, $this->id);
+      $this->thumbnail     = new Thumbnail($this, $blog);
     }
 
     function content() {
@@ -31,24 +32,6 @@
       return array_map(function($comment) use ($self) {
         return new Comment($self, $comment);
       }, $comments);
-    }
-
-    function thumbnail_url() {
-      global $wpdb;
-
-      $wpdb->set_blog_id($this->blog->id);
-
-      $attachment = wp_get_attachment_image_src(get_post_thumbnail_id($this->id), 'thumbnail');
-      $image_url  = $attachment[0];
-
-      if ($image_url) {
-        // work-around since wp_get_attachment_image_src doesn't understand WPMU paths
-        $image_url = str_replace('wp-content/uploads', $this->blog->path . '/files', $image_url);
-      } else {
-        $image_url = get_template_directory_uri() . '/assets/img/logos/s.png';
-      }
-
-      return $image_url;
     }
 
     function next_post_link($format = self::link_format, $text = 'Next Post') {

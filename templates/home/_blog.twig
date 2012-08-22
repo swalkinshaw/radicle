@@ -1,6 +1,6 @@
 <article id="post-{{ post.id }}" class="post row-fluid {{ blog.path }}">
   <a class="thumb" href="{{ post.permalink }}">
-    <img src="{{ post.thumbnail_url }}">
+    <img src="{{ thumbnail(post.thumbnail.url, asset_url('img/default-thumb.jpg')) }}">
   </a>
   <div class="info">
     <time class="post-date" datetime="{{ post.date }}">{{ post.formatted_date }}</time>

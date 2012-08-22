@@ -14,12 +14,8 @@
       return 'thumbnails';
     }
 
-    function thumbnail($thumb) {
-      if ($thumb) {
-        return $thumb;
-      } else {
-        return AssetsTwigExtension::asset_url('img/default-thumb.png');
-      }
+    function thumbnail($thumb, $default) {
+      return $thumb ? $thumb : $default;
     }
   }
 
