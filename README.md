@@ -73,4 +73,4 @@ These templates work just like any template/view would in MVC since they only ha
 
 ### Assets
 
-All assets (css, js, img) are under `/asset`. To reference them in a template, use the `asset_url` function. It takes a relative path to an asset: `asset_url('css/app.css')`. An md5 hash of the file will be appended in a query parameter for caching purposes.
+All assets (css, js, img) are under `assets/`. To reference them in a template, use the `asset_url` function. It takes a relative path to an asset: `asset_url('css/app.css')`. An md5 hash of the file will be appended in a query parameter for caching purposes.
