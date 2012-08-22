@@ -11,5 +11,6 @@
   require_once('models/post.php');
   require_once('models/author.php');
   require_once('models/comment.php');
+  require_once('models/thumbnail.php');
 
 ?>
