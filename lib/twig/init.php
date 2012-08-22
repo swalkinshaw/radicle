@@ -12,8 +12,12 @@
     'debug' => false,
   ));
 
-  require_once locate_template('lib/twig/extensions/wp.php');
+  require_once(TEMPLATEPATH . '/lib/twig/extensions/wp.php');
+  require_once(TEMPLATEPATH . '/lib/twig/extensions/assets.php');
+  require_once(TEMPLATEPATH . '/lib/twig/extensions/thumbnails.php');
 
   $twig->addExtension(new WordpressTwigExtension());
+  $twig->addExtension(new AssetsTwigExtension());
+  $twig->addExtension(new ThumbnailsTwigExtension());
 
 ?>
