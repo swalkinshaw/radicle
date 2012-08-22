@@ -61,7 +61,7 @@ $post = $wp_query->posts[0]
 
 ### Models
 
-Under the `classes` directory are models for a `Blog`, `Post`, `Author`, `Comment`. In order to get around WordPress Network Install (WPMU) constraints, there's some manual SQL queries are done in these files.
+Under the `classes` directory are models for a `Blog`, `Post`, `Author`, `Comment` and `Thumbnail`. In order to get around WordPress Network Install (WPMU) constraints, there's some manual SQL queries are done in these files.
 
 Currently, the models are plain classes that don't inherit from a parent Model class since they don't have much in common right now.
 
@@ -70,3 +70,7 @@ Currently, the models are plain classes that don't inherit from a parent Model c
 Templates are found in the `templates` directory. They use a real templating language instead of PHP mixed in with HTML. [Twig](http://twig.sensiolabs.org/) is used as the templating language. It's basically a PHP port of Jinja which Django uses.
 
 These templates work just like any template/view would in MVC since they only have access to the data passed down to them. There's one big exception to this: all built-in WP functions are available through the `wp` object to make our lives easier.
+
+### Assets
+
+All assets (css, js, img) are under `/asset`. To reference them in a template, use the `asset_url` function. It takes a relative path to an asset: `asset_url('css/app.css')`. An md5 hash of the file will be appended in a query parameter for caching purposes.
