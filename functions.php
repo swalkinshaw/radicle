@@ -1,5 +1,6 @@
 <?php
 
+  require_once('config/app.php');
   require_once('lib/init.php');
   require_once('lib/twig/init.php');
   require_once('lib/utils.php');
