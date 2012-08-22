@@ -82,4 +82,4 @@ All assets (css, js, img) are under `assets/`. To reference them in a template, 
 
 # Multisite
 
-This theme contains a lot of WPMU specific code. It assumes that they're are multiple blogs being used. If you want to use this on a normal single blog setup, any code referencing blogs or blog ids will need to be removed.
+This theme contains a lot of WPMU specific code. It assumes that there are multiple blogs being used. If you want to use this on a normal single blog setup, any code referencing blogs or blog ids will need to be removed.
