@@ -36,7 +36,7 @@ Example of a View
 
   class HomeView extends View {
     protected function data() {
-      $blog = get_last_updated_blogs();
+      $blogs = get_last_updated_blogs();
 
       return array('blogs' => $blogs);
     }
@@ -66,7 +66,7 @@ $post = $wp_query->posts[0]
 
 ### Models
 
-Under the `classes` directory are models for a `Blog`, `Post`, `Author`, `Comment` and `Thumbnail`. In order to get around WordPress Network Install (WPMU) constraints, there's some manual SQL queries are done in these files.
+Under the `models` directory are models for a `Blog`, `Post`, `Author`, `Comment` and `Thumbnail`. In order to get around WordPress Network Install (WPMU) constraints, there's some manual SQL queries are done in these files.
 
 Currently, the models are plain classes that don't inherit from a parent Model class since they don't have much in common right now.
 
