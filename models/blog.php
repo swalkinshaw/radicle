@@ -23,10 +23,10 @@
       $post = $wpdb->get_row(
         $wpdb->prepare(
           "SELECT ID, post_author, post_date, post_date_gmt, post_content, post_title, post_name, post_excerpt, comment_count
-           FROM wp_%d_posts
+           FROM %s_%d_posts
            WHERE post_status = 'publish' && post_type = 'post'
            ORDER BY post_date DESC LIMIT 1 OFFSET %d",
-           $this->id, $offset
+           $wpdb->prefix, $this->id, $offset
         )
       );
 

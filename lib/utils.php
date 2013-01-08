@@ -15,9 +15,9 @@
       $blog = $wpdb->get_row(
         $wpdb->prepare(
           "SELECT blog_id, site_id, domain, path
-           FROM wp_blogs
+           FROM %s_blogs
            WHERE path = %s",
-           $path
+           $wpdb->prefix, $path
         )
       );
 
