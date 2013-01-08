@@ -3,6 +3,12 @@ In botany, the radicle is the first part of a seedling (a growing plant embryo) 
 
 In WordPress, it's an experimental MVC style theme that is just crazy enough to work.
 
+# Disclaimer
+
+This theme was ported over from a production version that wasn't originally build with open-sourcing it in mind. It was made for a specific use case: a simple mobile theme for a WP Multisite install. It also contains some code to enable CDN assets to work correctly while using WP Total Cache.
+
+The odds are very low that you'll be able to use this theme as is without modifications.
+
 # Theme Architecture
 
 There are 3 files required by WordPress which must remain in the theme root: `style.css`, `functions.php`, and `index.php`.
@@ -31,8 +37,6 @@ Example of a View
 
 ```php
 <?php
-
-  namespace ts;
 
   class HomeView extends View {
     protected function data() {
